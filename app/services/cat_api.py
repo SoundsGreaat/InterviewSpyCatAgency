@@ -1,10 +1,7 @@
 import httpx
-import os
-from dotenv import load_dotenv
+from app.config import settings
 
-load_dotenv()
-
-CAT_API_URL = os.getenv("CAT_API_URL", "https://api.thecatapi.com/v1")
+CAT_API_URL = settings.CAT_API_URL
 
 
 async def validate_breed(breed: str) -> bool:
